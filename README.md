@@ -5,7 +5,7 @@ This repository contain some shell scripts to enhance the OAI-based ingest into 
 * wget
 * cUrl
 
-Scripts make use of both!
+Scripts may make use of both!
 
 # Use
 * First of all you have to adopt scripts for your use! 
