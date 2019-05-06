@@ -1,0 +1,4 @@
+        <mets:FLocat LOCTYPE="URL" xlin:href="http://www.ub.uni-koeln.de/cgi-bin/showfile.exe?CISOROOT=/alff&amp;CISOPTR=289"/>
+        <mets:FLocat LOCTYPE="URL" xlin:href="http://www.ub.uni-koeln.de/cgi-bin/showfile.exe?CISOROOT=/alff&amp;CISOPTR=290"/>
+        <mets:FLocat LOCTYPE="URL" xlin:href="http://www.ub.uni-koeln.de/cgi-bin/showfile.exe?CISOROOT=/alff&amp;CISOPTR=291"/>
+        <mets:FLocat LOCTYPE="URL" xlin:href="http://www.ub.uni-koeln.de/cgi-bin/showfile.exe?CISOROOT=/alff&amp;CISOPTR=292"/>

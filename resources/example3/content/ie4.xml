@@ -1,0 +1,197 @@
+<mets:mets xmlns:mets="http://www.loc.gov/METS/" xmlns:dv="http://dfg-viewer.de/" xmlns:xlin="http://www.w3.org/1999/xlink" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:mix="http://www.loc.gov/mix/v20" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:oai="http://www.openarchives.org/OAI/2.0/">
+  <mets:dmdSec ID="ie-dmd">
+    <mets:mdWrap MDTYPE="DC">
+      <mets:xmlData>
+        <dc:record xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <dc:identifier>oai:contentdm.ub.uni-koeln.de:alff/293</dc:identifier>
+          <dc:title>L'ARISTOCRATE EN FUITE: IL paroit une brochure qui a pour titre: LES VRAIS INTÉRETS DE S. M. [...]</dc:title>
+          <dc:date>1791</dc:date>
+        </dc:record>
+      </mets:xmlData>
+    </mets:mdWrap>
+  </mets:dmdSec>
+  <mets:amdSec ID="rep2-amd">
+    <mets:techMD ID="rep2-amd-tech">
+      <mets:mdWrap OTHERMDTYPE="dnx" MDTYPE="OTHER">
+        <mets:xmlData>
+          <dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+            <section id="generalRepCharacteristics">
+              <record>
+                <key id="label">TIFs</key>
+                <key id="preservationType">PRESERVATION_MASTER</key>
+                <key id="usageType">VIEW</key>
+                <key id="RevisionNumber">1</key>
+                <key id="DigitalOriginal">true</key>
+              </record>
+            </section>
+          </dnx>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+  </mets:amdSec>
+  <mets:amdSec ID="fid1-2-amd">
+    <mets:techMD ID="fid1-2-amd-tech">
+      <mets:mdWrap OTHERMDTYPE="dnx" MDTYPE="OTHER">
+        <mets:xmlData>
+          <dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+            <section id="generalFileCharacteristics">
+              <record>
+                <key id="label">imgmax289</key>
+                <key id="fileMIMEType">image/tiff</key>
+              </record>
+            </section>
+          </dnx>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+  </mets:amdSec>
+  <mets:amdSec ID="fid2-2-amd">
+    <mets:techMD ID="fid2-2-amd-tech">
+      <mets:mdWrap OTHERMDTYPE="dnx" MDTYPE="OTHER">
+        <mets:xmlData>
+          <dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+            <section id="generalFileCharacteristics">
+              <record>
+                <key id="label">imgmax290</key>
+                <key id="fileMIMEType">image/tiff</key>
+              </record>
+            </section>
+          </dnx>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+  </mets:amdSec>
+  <mets:amdSec ID="fid3-2-amd">
+    <mets:techMD ID="fid3-2-amd-tech">
+      <mets:mdWrap OTHERMDTYPE="dnx" MDTYPE="OTHER">
+        <mets:xmlData>
+          <dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+            <section id="generalFileCharacteristics">
+              <record>
+                <key id="label">imgmax291</key>
+                <key id="fileMIMEType">image/tiff</key>
+              </record>
+            </section>
+          </dnx>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+  </mets:amdSec>
+  <mets:amdSec ID="fid4-2-amd">
+    <mets:techMD ID="fid4-2-amd-tech">
+      <mets:mdWrap OTHERMDTYPE="dnx" MDTYPE="OTHER">
+        <mets:xmlData>
+          <dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+            <section id="generalFileCharacteristics">
+              <record>
+                <key id="label">imgmax292</key>
+                <key id="fileMIMEType">image/tiff</key>
+              </record>
+            </section>
+          </dnx>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+  </mets:amdSec>
+  <mets:amdSec ID="ie-amd">
+    <mets:techMD ID="ie-amd-tech">
+      <mets:mdWrap OTHERMDTYPE="dnx" MDTYPE="OTHER">
+        <mets:xmlData>
+          <dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+            <section id="objectIdentifier">
+              <record>
+                <key id="objectIdentifierType">OAI</key>
+                <key id="objectIdentifierValue">oai:contentdm.ub.uni-koeln.de:alff/293</key>
+              </record>
+            </section>
+          </dnx>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:techMD>
+    <mets:rightsMD ID="ie-amd-rights">
+      <mets:mdWrap OTHERMDTYPE="dnx" MDTYPE="OTHER">
+        <mets:xmlData>
+          <dnx xmlns="http://www.exlibrisgroup.com/dps/dnx">
+            <section id="accessRightsPolicy"/>
+          </dnx>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:rightsMD>
+    <mets:sourceMD ID="ie-amd-source">
+      <mets:mdWrap OTHERMDTYPE="dnx" MDTYPE="OTHER">
+        <mets:xmlData>
+          <dnx xmlns="http://www.exlibrisgroup.com/dps/dnx"/>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:sourceMD>
+    <mets:sourceMD ID="ie-amd-source-MODS">
+      <mets:mdWrap MDTYPE="MODS">
+        <mets:xmlData>
+          <mods:mods>
+            <mods:titleInfo>
+              <mods:title>L'ARISTOCRATE EN FUITE: IL paroit une brochure qui a pour titre: LES VRAIS INTÉRETS DE S. M. [...]</mods:title>
+            </mods:titleInfo>
+            <mods:originInfo>
+              <mods:dateIssued>1791</mods:dateIssued>
+            </mods:originInfo>
+            <mods:language>
+              <mods:languageTerm>und</mods:languageTerm>
+            </mods:language>
+            <mods:location>
+              <mods:physicalLocation>Universitäts- und Stadtbibliothek Köln</mods:physicalLocation>
+              <mods:shelfLocator>ALFF.K33</mods:shelfLocator>
+              <mods:url>http://www.ub.uni-koeln.de/permalink/2008/01/katkey:6079053</mods:url>
+            </mods:location>
+            <mods:accessCondition>No Copyright</mods:accessCondition>
+          </mods:mods>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:sourceMD>
+    <mets:sourceMD ID="ie-amd-source-OTHER-1">
+      <mets:mdWrap OTHERMDTYPE="xml" MDTYPE="OTHER">
+        <mets:xmlData>
+          <record/>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:sourceMD>
+    <mets:digiprovMD ID="ie-amd-digiprov">
+      <mets:mdWrap OTHERMDTYPE="dnx" MDTYPE="OTHER">
+        <mets:xmlData>
+          <dnx xmlns="http://www.exlibrisgroup.com/dps/dnx"/>
+        </mets:xmlData>
+      </mets:mdWrap>
+    </mets:digiprovMD>
+  </mets:amdSec>
+  <mets:fileSec>
+    <mets:fileGrp USE="VIEW" ID="rep2" ADMID="rep2-amd">
+      <mets:file ID="fid1-2" ADMID="fid1-2-amd">
+        <mets:FLocat LOCTYPE="URL" xlin:href="http://www.ub.uni-koeln.de/cgi-bin/showfile.exe?CISOROOT=/alff&amp;CISOPTR=289"/>
+      </mets:file>
+      <mets:file ID="fid2-2" ADMID="fid2-2-amd">
+        <mets:FLocat LOCTYPE="URL" xlin:href="http://www.ub.uni-koeln.de/cgi-bin/showfile.exe?CISOROOT=/alff&amp;CISOPTR=290"/>
+      </mets:file>
+      <mets:file ID="fid3-2" ADMID="fid3-2-amd">
+        <mets:FLocat LOCTYPE="URL" xlin:href="http://www.ub.uni-koeln.de/cgi-bin/showfile.exe?CISOROOT=/alff&amp;CISOPTR=291"/>
+      </mets:file>
+      <mets:file ID="fid4-2" ADMID="fid4-2-amd">
+        <mets:FLocat LOCTYPE="URL" xlin:href="http://www.ub.uni-koeln.de/cgi-bin/showfile.exe?CISOROOT=/alff&amp;CISOPTR=292"/>
+      </mets:file>
+    </mets:fileGrp>
+  </mets:fileSec>
+  <mets:structMap ID="rep2-1" TYPE="LOGICAL">
+    <mets:div>
+      <mets:div LABEL="Titelblatt K33" TYPE="FILE">
+        <mets:fptr FILEID="fid1-2"/>
+      </mets:div>
+      <mets:div LABEL="Seite 2" TYPE="FILE">
+        <mets:fptr FILEID="fid2-2"/>
+      </mets:div>
+      <mets:div LABEL="Seite 3" TYPE="FILE">
+        <mets:fptr FILEID="fid3-2"/>
+      </mets:div>
+      <mets:div LABEL="Seite 4" TYPE="FILE">
+        <mets:fptr FILEID="fid4-2"/>
+      </mets:div>
+    </mets:div>
+  </mets:structMap>
+</mets:mets>

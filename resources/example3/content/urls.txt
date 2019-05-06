@@ -1,0 +1,4 @@
+        http://www.ub.uni-koeln.de/cgi-bin/showfile.exe?CISOROOT=/alff&CISOPTR=289
+        http://www.ub.uni-koeln.de/cgi-bin/showfile.exe?CISOROOT=/alff&CISOPTR=290
+        http://www.ub.uni-koeln.de/cgi-bin/showfile.exe?CISOROOT=/alff&CISOPTR=291
+        http://www.ub.uni-koeln.de/cgi-bin/showfile.exe?CISOROOT=/alff&CISOPTR=292
