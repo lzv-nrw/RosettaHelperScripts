@@ -13,6 +13,7 @@ echo -e "Start: $(date) \n"
 
 ## Definiere den Pfad, in dem die zuvor mit dem OAI-Harvester-Job geholten ie.xml liegen.
 ingestPath="./${1:-target}"
+echo "Ingestpath $ingestPath"
 
 echo "Schritt 1: Lösche alte Hilfsdateien"
 find "$ingestPath" -name flocation.*.txt -type f -execdir rm {} \;
@@ -25,25 +26,23 @@ echo "Schritt 2: Filtere und sortiere mehrteilige Monografien"
 # Suche alle Überordnungen - Diese besitzen "HAS_PART"
 # -printf "%h\t" kopiert den reinen Pfad und einen Tabulator - ohne Dateinamen in die Variable pname
 # -printf "%p\n" kopiert den Pfad + Dateinamen und einen Umbruch in die Variable fname 
-multivolumeNum=0
 find "$ingestPath" -name "ie*.xml" -exec grep -q '<key id="relationshipSubType">HAS_PART</key>' {} \; -printf "%h\t" -printf "%p\n" | while read -r pname fname; do
 	
-	dirCounter=$((++multivolumeNum))
-	echo "dirCounter $dirCounter"
 	echo "fname $fname"
-
-	dname="multivolume_$dirCounter/content"
-	echo "dname $dname"
 	
 	# Erstelle Ordner für mehrteilige Monograpien
-	mkdir -p "$dname"
+	parentID="$(grep -oP 'oai:elekpub.bib.uni-wuppertal.de:\K.*?(?=<)' $fname | cut -d ":" -f3)" 
+	dname="multivolume_$parentID/content"
+	echo "dname $dname"
+	mkdir -p "$ingestPath/$dname"
+	
 	# Verschiebe Überordnung in der erstellten Ordner
-	cp -p -u $fname ./$dname/"parent.xml"
+	cp -p -u $fname $ingestPath/$dname/"parent.xml"
 	rm $fname
 	
 	# Ermittle Anzahl der Unterordnungen
-	searchBook='TYPE="book">'
-	bookNum="$(grep $searchBook ./$dname/parent.xml | wc -l)"
+	searchBook='TYPE="monograph">'
+	bookNum="$(grep $searchBook $ingestPath/$dname/parent.xml | wc -l)"
 	echo "bookNum $bookNum"
 	
 	# Schleife für die Unterordnungen
@@ -52,8 +51,8 @@ find "$ingestPath" -name "ie*.xml" -exec grep -q '<key id="relationshipSubType">
 		echo "Unterordnung: $i"
 		
 		# Finde ID von der i-ten Unterordnung in der StructMap 
-		bookID="$(grep -m$i $searchBook ./$dname/parent.xml)"
-		bookID="$(echo $bookID | sed -e 's/.*DMDID="md\(.*\)" ID.*/\1/')" 
+		bookID="$(grep -m$i $searchBook $ingestPath/$dname/parent.xml)"
+		bookID="$(echo $bookID | sed -e 's/.*ID="log\(.*\)" LABEL.*/\1/')"
 		
 		echo "bookID: $bookID"
 		
@@ -62,7 +61,7 @@ find "$ingestPath" -name "ie*.xml" -exec grep -q '<key id="relationshipSubType">
 			
 			echo "fname2 $fname2"
 			# Verschiebe in den zugehörigen Ordner
-			cp -p -u $fname2 ./$dname/"child_"$i".xml"
+			cp -p -u $fname2 $ingestPath/$dname/"child_"$i".xml"
 			rm $fname2			
 		done			
 	done
@@ -70,7 +69,7 @@ find "$ingestPath" -name "ie*.xml" -exec grep -q '<key id="relationshipSubType">
 done
 
 echo "Schritt 3: Erzeuge aktuelle Hilfsdateien"
-# Die folgende Schleife sucht alle ie.xml-Dateien in Unterverzeichnissen 
+# Die folgende Schleife sucht alle ie*.xml-Dateien oder child*.xml-Dateien in Unterverzeichnissen 
 # -printf "%h\t" kopiert den reinen Pfad und einen Tabulator - ohne Dateinamen in die Variable pname
 # -printf "%p\n" kopiert den Dateinamen und einen Umbruch in die Variable fname 
 
@@ -85,20 +84,18 @@ find "$ingestPath" \( -type f -name "ie*.xml" -o -name "child_*" \) -exec grep -
 	echo "$count"
 	echo "$pname"
 	echo "$fname"
-	# Suche jeden <mets:Flocat-Eintrag in der Datei ie*.xml bzw. child_*xml und kopiere ihn in die Hilfsdatei flocation.txt im jeweiligen Unterverzeichnis
+	# Suche jeden <mets:Flocat-Eintrag in der Datei ie*.xml bzw. child_*.xml und kopiere ihn in die Hilfsdatei flocation.txt im jeweiligen Unterverzeichnis
 	grep "<mets:FLocat.*https" "$fname" >> "$pname"/flocation"$count".txt
 	
 	## Schreibe das Ergebnis in die Datei urls.txt. Beispiel:
 	# <mets:Flocat LOCTYPE="URL" xlin:href="https://example.org" /> wird zu https://example.org in URLs.txt
 	cut -d'"' -f4 < "$pname"/flocation"$count".txt >> "$pname"/urls"$count".txt
 
-	#sed -e 's/<mets:FLocat LOCTYPE=\"URL\" xlin:href=\"\|\"\/>\|amp\;//g' "$pname"/flocation.txt >> "$pname"/urls.txt
 done
 
 echo "Schritt 4: Harveste URLs aus Repository"
 
 currentdir=$(pwd)
-#echo "$currentdir"
 
 # Finde alle urls.txt in den Unterverzeichnissen, erzeuge die streams-Verzeichnisse für Rosetta und Harveste die vorher extrahierten URLs einzeln ab.
 find "$ingestPath" -name "urls*.txt" -printf "%h\t" -printf "%p\n" | while read -r pname urlfile; do
@@ -151,7 +148,7 @@ find "$ingestPath" -name "urls*.txt" -printf "%h\t" -printf "%p\n" | while read 
 		echo "OriginalName: $originalName"
 		
 		# Füge fehlenden Dateisuffix an die Dateien hinzu
-		if [[ $url == *"/download/fulltext/raw/"* ]]; then
+		if [[ $url == *"/download/fulltext/alto3/"* ]]; then
 			extension=".xml"
 			dfname=$originalName$extension 
 			fname=${dfname%.*}
